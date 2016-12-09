@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     bool wallSliding;
     int wallDirX;
 
+    
     void Start()
     {
         controller = GetComponent<Controller2D>();
@@ -144,7 +145,8 @@ public class Player : MonoBehaviour
                 timeToWallUnstick = wallStickTime;
             }
 
-        }
+         
+            }
 
     }
 
@@ -154,4 +156,5 @@ public class Player : MonoBehaviour
         velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
         velocity.y += gravity * Time.deltaTime;
     }
+
 }
